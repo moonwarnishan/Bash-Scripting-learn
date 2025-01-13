@@ -42,3 +42,31 @@
 # echo "Hello" > output.txt
 # echo "World" > output.txt
 # echo "Hello World" >> output.txt
+# file="output.txt"
+# if [ -f "$file" ]; then
+#     echo "File Exists"
+# else
+#     echo "No file found"
+# fi
+
+# if [ -w "$file" ] && [ -r "$file" ]; then
+#     echo "File is  Writable Readable"
+# elif [ -x "$file" ]; then 
+#     echo "File is executable"
+# else
+#     echo "Done"
+# fi
+
+##Error handling
+if [ $? -eq 0 ]; then 
+    echo "Previous command successful"
+else
+    echo "Previous command failed"
+fi
+
+#Error Handling function
+handle_error() {
+    echo "Error: $1" >&2
+    exit 1
+}
+command || handle_error "command failed"
