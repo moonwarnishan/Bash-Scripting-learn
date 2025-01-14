@@ -1,124 +1,116 @@
-# Linux Commands
+# Linux Command Reference Guide
 
 ## Command Structure
-    1. Command Name
-    2. Options(starting with -)
-    3. Arguments
+A Linux command typically consists of three parts:
+1. Command Name
+2. Options (starting with `-`)
+3. Arguments
 
+## Basic System Commands
 
-## 1. Basic Commands
-    `who` : Displays currently logged-in users
-    `w`   : Displays currently logged-in users and their tasks
-    `whoami` : Displays your login name
-    `id` : Displays User IDs (UIDs) and Group Ids (GIDs)
-    `uname -a` : Displays system information
-    `ls` : Lists files in the current directory
-    `ls -l` : for detailed list including file permissions and sizes
-    `exit` : Exits out of your current shell
-    `su` : switch user command
-    `su -root` : switch to root user with environment variables
-    `su -c "commands" root` : run a single command as root 
-    `mkdir` : make directory
-    `touch ` : command for making new file
+### User Information
+- `who` - Displays currently logged-in users
+- `w` - Shows logged-in users and their current tasks
+- `whoami` - Displays your current login name
+- `id` - Shows User IDs (UIDs) and Group IDs (GIDs)
 
-## 2. Shell Metacharacters
-    `$` : variable indentifier
-    `~` : Home directory
-    `#` : Comment
-    `&` : background execution
-    `;` : Command separator
+### System Information
+- `uname -a` - Displays detailed system information
+- `pwd` - Shows your current location in the filesystem
 
+### File and Directory Operations
+- `ls` - Lists files in the current directory
+  - `ls -l` - Detailed list including permissions and sizes
+  - `ls -a` - Shows hidden files (starting with .)
+  - `ls -R` - Lists subdirectories recursively
+  - `ls -aF` - Combines multiple options
+- `mkdir` - Creates a new directory
+- `touch` - Creates a new empty file
+- `cd` - Changes directory
+  - `cd /path/to/directory` - Goes to specific directory
+  - `cd ~` - Goes to home directory
+  - `cd ..` - Moves up one directory
+  - `cd -` - Returns to previous directory
+
+### User Switching
+- `su` - Switches user
+- `su -root` - Switches to root user with environment variables
+- `su -c "commands" root` - Runs a single command as root
+
+## Shell Special Characters
+- `$` - Variable identifier
+- `~` - Home directory
+- `#` - Comment
+- `&` - Background execution
+- `;` - Command separator
+
+## Documentation Access
 
 ### Man Pages
-    Manual pages (man pages) are the most common form of linux command documentation.
-    Access with : `man` command
-    Displays extensive information about the command
-    Including syntax, options, related files and commands
-### Searching Man pages
-    `man [keyword]`
-    `apropos [Keyword]`
-    These commands search command names and descriptions
-
+- `man [command]` - Displays manual pages for commands
+- `man [keyword]` - Searches command documentation
+- `apropos [keyword]` - Searches command names and descriptions
 
 ### Info Pages
-    #### GNU info pages are alternative to man pages:
-        Access with : `info [command]`
-        Ofter more detailed than man pages
-        includes hyperlinks to related information
-### help command
-    For shell built-in commands without man or info pages:
-        Use: `help [command]`
-        provides brif description and usage information
-### Shutting Down the linux system
-    #### proper shutdown is crucial to prevent file damage:
-        1. Use the shutdown command to safety power off or reboot
-        2. Can schedule shutdown for a future time
-        3. Notify Users with the wall command before shutdown
-    #### Common Shutdown Commands
-        `shutdown -p+15` : Power off in 15 minutes
-        `poweroff` : Poweroff immeidately
-        `shutdown -r now` : Reboot immediately
-        `shutdown -c` : Cancel scheduled shutdown
+- `info [command]` - Displays GNU info pages
+  - Often more detailed than man pages
+  - Includes hyperlinks to related information
 
-## Linux Directory Navigation
-    ### Home Directory
-        1. Each user has unique home directory
-        2. Regular users : /home/username
-        3. Root user: /root
-        4. Use ~ to refer to your home directory
-    ### PWD Command
-         the `pwd` command shows your current location in the filesystem
-    ### CD command
-        1. `cd` : Change Directory
-        2. `cd /path/to/directory` : Go to specific directory
-        3. `cd ~` : Go to the home directory
-        4. `cd ..` : Move up one directory
-        5. `cd -` : Go to previous directory
+### Built-in Help
+- `help [command]` - Shows help for shell built-in commands
 
-### Linux File Types
-    1. Text Files
-    2. Binary Data Files
-    3. Executable program files
-    4. Directory Files
-    5. Special device files
-    6. Named pipes and sockets
-### FIle Viewing Commands
-    1. `cat` : Display entire file content
-    2. `less` : View file content page by page
-    3. `head` : Display first few lines of a file
-    4. `tail` : Display last few lines of a file
-### The File Command
-    1. Display file type information
-    2. usage : `file filename`
-    3. Multiple files : `file file1 file2`
-    4. All Files in current directory: `file *`
-### The stat command
-    1. Displays detailed file information
-    2. usage: `stat filename`
-    3. Shows creation, access and modification times
-    4. provides file size and inode information
+## System Shutdown Commands
+- `shutdown -p+15` - Powers off system in 15 minutes
+- `poweroff` - Powers off system immediately
+- `shutdown -r now` - Reboots system immediately
+- `shutdown -c` - Cancels scheduled shutdown
+
+## File Operations
+
+### File Types
+1. Text Files
+2. Binary Data Files
+3. Executable Program Files
+4. Directory Files
+5. Special Device Files
+6. Named Pipes and Sockets
+
+### File Viewing
+- `cat` - Displays entire file content
+- `less` - Views file content page by page
+- `head` - Shows first few lines of a file
+- `tail` - Shows last few lines of a file
+- `file` - Displays file type information
+  - `file filename` - Shows type of a single file
+  - `file file1 file2` - Shows type of multiple files
+  - `file *` - Shows type of all files in current directory
+- `stat` - Shows detailed file information including:
+  - Creation, access, and modification times
+  - File size and inode information
+
+### Pattern Matching and Searching
+
+#### Wildcard Characters
+- `*` - Matches zero or more characters
+- `?` - Matches exactly one character
+- `[aegh]` - Matches any single character in the set
+- `[a-e]` - Matches any single character in the range
+- `[!a-e]` - Matches any single character not in the range
+
+#### The grep Command
+- Basic usage: `grep "pattern" filename`
+- Regular expression support:
+  - `.` - Matches any single character
+  - `^` - Matches start of line
+  - `$` - Matches end of line
+
+## Directory Structure
+### Home Directory
+- Regular users: `/home/username`
+- Root user: `/root`
+- `~` shortcut refers to current user's home directory
+
 ### Hidden Files
-    1. Files starting with a . are hidden
-    2. View hidden files `ls -a`
-    3. Common hidden files: .bashrc, .profile
-    4. Combine options: ls -aF
-### Recursive Listing
-    1. List subdirectories : `ls -R`
-    2. Alternative : `tree command`
-    3. Tree command shows directory structure
-    4. Useful for visualizing folder hierarchies
-### WildCard Metacharacters
-    1. `*` : Matches 0 or more characters
-    2. `?` : Matches exactly 1 character
-    3. `[aegh]` : Matches any single character in the set
-    4. `[a-e]` : Matches any single character in the range
-    5. `[!a-e]` : Matches any single character Not in the range
-### The grep Command
-    1. Searches for patterns in text files
-    2. Displays lines matching a specified pattern
-    3. Supports regular expressions for advance searching
-    4. usage : `grep "ubuntu" package_management.txt`
-    ### Regular expression with grep
-        1. `.` : Matches any single character
-        2. `^` : Matches start of line
-        3. `$` : Matches end of line
+- Files starting with `.` are hidden
+- Common examples: `.bashrc`, `.profile`
+- Use `ls -a` to view hidden files
