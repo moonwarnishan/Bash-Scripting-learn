@@ -41,3 +41,6 @@ Terminal -> Shell -> OS
     - `xdg-open ~` : open Home directory in graphical order
     - `pwd` : print working directory
     - `ls` : The list command will list the contents of a directory
+    - `ls -l` : long version of contents with details
+    - `ls -a` : shows all files including (.). also hidden files 
+    - `cd` : the cd command is used to change the current working directory, "moving" into     another directory.
