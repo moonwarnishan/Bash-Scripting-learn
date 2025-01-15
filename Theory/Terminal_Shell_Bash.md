@@ -88,3 +88,15 @@ Terminal -> Shell -> OS
     - `history | less` : displays shell command history in a scrollable view using the less pager.
     - `!<number>` : we can easily re-run an easier command if we have its line number from the history.
     - `ctrl -r` : Ofter it's easiest to find an earlier command by searching using a small portion of the command that you remember.
+
+# Working With Files 
+ - `cat <filename>` : The cat command concatenates and print the contents of files.
+ - `less <filename>` : THe less command displays the contents of a file , one page at a time. We can navigate forwards and backwards through the file which is especially useful with very large files.
+        press space or f to go to the next page of the file. press b to go back to the previous page. press enter or down arrow to scroll by one line. to search type forward slash / followed by a pettern. press q to quit.
+ - `tac <filename>` : will concatenate and print files in reverse. It prints each line of a file starting the last line. It printing in reverse vetically
+ - `rev <filename>` : this command prints the contents of a file, reversing the order of each line. Thinks of it as a horizontal reverse , whereas tac is a vertical reverse
+ - `head <filename>` : It prints a portion of a file. Starting from the beginning of the file. By default 10 lines
+ - `head -n numofline <filename>` : We can also specify a number of lines for head to print using -n options.
+ - `head -c numofbyte <filename>` : provide a number of bytes to print out rather than lines using the -c option.
+ - `tail <filename>` : It works similarly to the head command, expect it prints from the end of file.
+ the same -n and -c options we sawwith head also work with 
