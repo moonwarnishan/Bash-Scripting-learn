@@ -43,4 +43,14 @@ Terminal -> Shell -> OS
     - `ls` : The list command will list the contents of a directory
     - `ls -l` : long version of contents with details
     - `ls -a` : shows all files including (.). also hidden files 
-    - `cd` : the cd command is used to change the current working directory, "moving" into     another directory.
+    - `cd <path>` : the cd command is used to change the current working directory, "moving" into     another directory.
+    - `touch <file name>` : To create a new file from the command line, use the touch command. Provide a file name and that file wil be created for you.
+    - `file <file name>` : The file command can be used to determine the file type of a specified file.
+    - `mkdir <folder name>` : To create new directories, we use thr make directory command. We provide one or more directory names and it will create them for us.
+    
+# Nano
+    Nano is a simple text editor that we can access right from the terminal. Its far more accessible than other popular command-line editors like vim and emacs.
+    Nano includes all the basic text editing functionality you would expect: search, spellcheck, syntax highlighting etc.
+    
+    To open up a file using nano run `nano FILE`. 
+    for example `nano book.txt`
