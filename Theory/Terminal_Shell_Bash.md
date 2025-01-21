@@ -130,3 +130,20 @@ Terminal -> Shell -> OS
    - a charecter or word middle of it `ls -l *at*`
    - The question mark `?` character represents any single character.
         Example : `ls app.??` will match any files named "app" that ends with two characer file entensions like `app.js`
+   - Brace expansion is used to generate arbitrary strings. Basically, it will generate multiple strings for us based on a pattern.
+        We provide a set of strings inside of curly braces `{}`, as well as optional surrounding prefixes and suffiexes.
+         Example : `touch page{1,2,3}.txt` it will create page1, page2, page3, page4 four different files.
+         also we can add range `echo journal{1..29}`
+    - The shell will perform arithmetic via expansion using the `S((expression))` syntax. 
+        inside the parentheses, we can right artithmetic expressions using:
+            +, -. * , /, **, %
+    # Finding things
+    - The locate command performs a search of pathnames across our machine that match a given substring and then prints out any matching names.
+    example : `locate output`
+    - The locate command is nice and easy, but it can only do so much! The find command is far more powerful! unlike locate , find does not use a database file.
+    example : `find friends/`
+    - We can use the -size option to find files of a specific size. For example, to find all files larger than 1gb we could `run find -size +1G`
+     TO find all files that are exactly 20KB we could run `find size 20k`
+    - We can use the -user option to match files and directories that belong to a particular user.
+        `find -user hermione`
+    - find empty folders/files `find -empty`
