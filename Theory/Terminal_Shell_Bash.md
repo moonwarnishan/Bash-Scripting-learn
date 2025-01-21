@@ -112,6 +112,21 @@ Terminal -> Shell -> OS
   - example to store list of file `ls > listoffile.txt`
   - We can redirect multiple streams at once. As example `cat bees.txt ants.txt > insects.txt 2>error.txt`
   - `ls docs > output.txt 2>&1`If we wanted to redirect both standard output and standard error to the same file , we could do this. 
+  
   # Pipeing
     Pipes are used to redirect a stream from one program to another program. We can take the output of one command and redirect it to the input of another.
-    
+
+    We use the pipe character `|` to separate two  commands. The output of the first command will be passed to the standard input of the second command.  
+    We can use `tr` like this. `cat hello.txt | tr e E` that will replace lowercase with uppercase.
+    It will not change the file.
+    - `-h` it means human redable sizes. and `du` disk usage . example `du -h output.txt`
+    - `tee` The tee program reads standard input and copies it both to standard output AND a fill. This allows us to capture information part of the way through a pipeline, without interrupting the flow. 
+    - example : `cat colours.txt words.txt | tee colorsAndWords.txt | wcs` 
+
+   # Expansion
+   - `*` The asterisk character represents zero or more character in a filename. For example
+    `ls *.html` will match any files that end with .html like index.html or nav.html
+   - `cat blue` will match any files that start with "blue" like "blue.html" or "bluesteel.js".
+   - a charecter or word middle of it `ls -l *at*`
+   - The question mark `?` character represents any single character.
+        Example : `ls app.??` will match any files named "app" that ends with two characer file entensions like `app.js`
