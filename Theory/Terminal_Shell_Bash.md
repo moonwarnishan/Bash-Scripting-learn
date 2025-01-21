@@ -100,3 +100,18 @@ Terminal -> Shell -> OS
  - `head -c numofbyte <filename>` : provide a number of bytes to print out rather than lines using the -c option.
  - `tail <filename>` : It works similarly to the head command, expect it prints from the end of file.
  the same -n and -c options we sawwith head also work with 
+
+ # Redirection
+  - The redirection output symbol `>` tells the shell to redirect the output of a command to a specific file instead of the screen.
+  - to append something in existing file `>>` command use. like `ncal >> output.txt`
+  - TO pass the contents of a file to standard input, use the `<` symbol followed by the filename.
+    for example `cat < output.txt`
+  - We can redirect standard input and output at the same time. like `cat < original.txt > output.txt`
+  - `ls hfhf 2> errorlog.txt` since hfhf file does not exists then The error message log into errorlog.txt file.
+  - standard output `1>`  standard error `2>`
+  - example to store list of file `ls > listoffile.txt`
+  - We can redirect multiple streams at once. As example `cat bees.txt ants.txt > insects.txt 2>error.txt`
+  - `ls docs > output.txt 2>&1`If we wanted to redirect both standard output and standard error to the same file , we could do this. 
+  # Pipeing
+    Pipes are used to redirect a stream from one program to another program. We can take the output of one command and redirect it to the input of another.
+    
