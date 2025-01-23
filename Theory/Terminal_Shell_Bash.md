@@ -147,3 +147,38 @@ Terminal -> Shell -> OS
     - We can use the -user option to match files and directories that belong to a particular user.
         `find -user hermione`
     - find empty folders/files `find -empty`
+
+    - We can provide find with our own action to perform using each matching pathname.
+      `find -exec command {}`;
+    # grep
+    - The grep command searches for patterns in each file's contents. Grep will print each line that matches a pattern we provide.
+     for example `grep "chicken" animals.txt`
+    - Use the -i option with grep to make the search case insensitive.
+        Example : `grep -i "chapter" book.txt`
+    - Use the -w option to ensure that grep only matches words, rather than fragments located inside of other words. 
+        Example : `grep -w "cat" book.txt`
+    - Use the -r option to perform a resursive search which will include all files under a directory,
+        subdirectories and their files and so on.
+        Example: `grep -r "chicken"`
+
+    Regex : 
+        . - matches any single character.
+        ^ - matches the start of a line.
+        $ - matches the end of a line.
+        [abc] - matches any character in the set.
+        [^abc] - matches any character NOT in set.
+        [A-Z] - matches characters in a range.
+        * - repeat previousexpression 0 or more times.
+        \ - escape meta-characters.
+    - The -c option tells grep to print the number of matches instead of print the actual matches.
+      Example: `grep -c "\$[1-9]" prices.txt`
+    - The -o option tells grep to only print out the matches, rather than the entire line containing each match.
+    Example : `grep -o "\$[1-9]" prices.txt`
+    - A common use case is thto use grep to whittle down or filter a large chunk of data.
+    `ps -aux | grep hermione`
+    In this example, the ps-aux command will output a huge list of all processes running on our machine. We pipe that data to grep and then filter it down to only the processes that include "hermione"
+    # Permissions
+    ## Multiple users
+        - Unix and unix-like systems are multiuser operating systems.  More than one person can be using the same computer at the same time.
+        - On unix systems a single user may be the owner of files and directories, meaning that they have control over their access. Additionally , users can belong to groups which are given access to particular files and folders by their owners.
+        - 
